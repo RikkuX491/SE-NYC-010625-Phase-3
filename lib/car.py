@@ -1,12 +1,21 @@
-import ipdb
-
 class Car:
+
+    # Deliverable # 3 solution code
+    all = []
     
     def __init__(self, make, model, year, horn_volume=1):
         self.make = make
         self.model = model
         self.year = year
         self.horn_volume = horn_volume
+
+        if len(Car.all) == 0:
+            self.id = 1
+        else:
+            last_car = Car.all[-1]
+            self.id = last_car.id + 1
+        
+        Car.all.append(self)
 
     @property
     def make(self):
@@ -49,3 +58,31 @@ class Car:
 
     def honk_horn(self):
         print(f"BEEP BEEP{'!' * self.horn_volume}")
+
+    # Deliverable # 2 solution code
+    @property
+    def model(self):
+        return self._model
+    
+    @model.setter
+    def model(self, value):
+        if hasattr(self, 'model') or not (type(value) == str):
+            raise Exception
+        
+        self._model = value
+
+    # Deliverable # 4 solution code
+    @classmethod
+    def average_year(cls):
+        # print(cls)
+        year_list = [car.year for car in cls.all]
+        return sum(year_list) / len(year_list)
+    
+    # Here's a class method that returns a list of cars that have a particular make
+    @classmethod
+    def cars_with_make(cls, make):
+        # print(make)
+        return [car for car in cls.all if car.make == make]
+    
+    def __repr__(self):
+        return f"<Car # {self.id} - Make: {self.make}, Mode: {self.model}, Year: {self.year}, Horn Volume: {self.horn_volume}>"
