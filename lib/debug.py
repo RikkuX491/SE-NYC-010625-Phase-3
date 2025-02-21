@@ -1,5 +1,6 @@
 import ipdb
 
-# Deliverable # 1 solution code goes here: Add import statement to import the Car class from the car.py file
+# Deliverable # 1 solution code
+from car import Car
 
 ipdb.set_trace()

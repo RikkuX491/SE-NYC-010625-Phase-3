@@ -1,12 +1,18 @@
 import ipdb
 
 class Car:
+
+    # Deliverable # 3 solution code
+    all = []
     
     def __init__(self, make, model, year, horn_volume=1):
         self.make = make
         self.model = model
         self.year = year
         self.horn_volume = horn_volume
+
+        # Deliverable # 3 solution code
+        Car.all.append(self)
 
     @property
     def make(self):
@@ -49,3 +55,21 @@ class Car:
 
     def honk_horn(self):
         print(f"BEEP BEEP{'!' * self.horn_volume}")
+
+    # Deliverable # 2 solution code
+    @property
+    def model(self):
+        return self._model
+    
+    @model.setter
+    def model(self, value):
+        if hasattr(self, 'model') or not (type(value) == str):
+            raise Exception("Model cannot be changed and must be a string!")
+        
+        self._model = value
+
+    # Deliverable # 4 solution code
+    @classmethod
+    def average_year(cls):
+        year_list = [car.year for car in cls.all]
+        return sum(year_list) / len(year_list)
