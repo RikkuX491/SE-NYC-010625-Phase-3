@@ -74,9 +74,12 @@ class Car:
     # Deliverable # 4 solution code
     @classmethod
     def average_year(cls):
-        # print(cls)
-        year_list = [car.year for car in cls.all]
-        return sum(year_list) / len(year_list)
+        # This if statement is useful, since if the list is empty, len(year_list) will be 0, and we'll get a ZeroDivisionError if we divide by 0
+        if len(cls.all) == 0:
+            return 0
+        else:
+            year_list = [car.year for car in cls.all]
+            return sum(year_list) / len(year_list)
     
     # Here's a class method that returns a list of cars that have a particular make
     @classmethod
