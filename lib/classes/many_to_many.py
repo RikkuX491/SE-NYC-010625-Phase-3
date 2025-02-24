@@ -47,7 +47,7 @@ class Hotel:
         else:
             return customer_list
     
-    # Helper method that is called within the customers_more_than_three reviews() method
+    # Helper method that is called within the customers_more_than_three_reviews() method
     def has_more_than_3_reviews(self, customer):
         review_list = [review for review in customer.reviews() if review.hotel is self]
         
