@@ -1,4 +1,3 @@
-# Relationship: 1 Hotel has many Reviews (1-to-Many Relationship)
 class Hotel:
     
     def __init__(self, name):
