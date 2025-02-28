@@ -17,7 +17,7 @@ class Hotel:
         if(isinstance(name_parameter, str)) and (5 <= len(name_parameter) <= 20):
             self._name = name_parameter
         else:
-            raise ValueError("Name must be a string between 5 and 20 characters long!")
+            raise ValueError("Error: Name must be a string between 5 and 20 characters long!")
     
     # add new ORM methods after existing methods
     @classmethod
@@ -116,6 +116,10 @@ class Hotel:
 
         CURSOR.execute(sql, (self.name, self.id))
         CONN.commit()
+
+        for hotel in Hotel.all:
+            if hotel.id == self.id:
+                hotel.name = self.name
 
     def delete(self):
         """ Delete the table row corresponding to the current Hotel instance and remove it from the all class variable """
