@@ -21,7 +21,6 @@ def seed_database():
     Room.create("Collins Classroom", "Welcome to Collins Classroom! Enjoy the lovely views offered outside the windows. It's yet another one of our rooms you'll find instructors giving lectures in.")
     Room.create("Kay Classroom", "Welcome to Kay Classroom - a pretty quiet and chill classroom near the phone booths, lockers, and instructor tables.")
     Room.create("Katherine Johnson Workroom", "Welcome to Katherine Johnson Workroom - the quiet space for students to focus on getting those assignments done, or also to relax away from all of the noise.")
-    Room.create("Teacher's Lounge", "401 Unauthorized")
 
 seed_database()
 print("🌱 Pages and Rooms successfully seeded! 🌱")
