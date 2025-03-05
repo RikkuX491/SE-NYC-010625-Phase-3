@@ -6,12 +6,16 @@ class Room:
     doubly_linked_list = DoublyLinkedList()
 
     # Add next_node and prev_node parameters to the __init__() method that both have a default value of None
-    def __init__(self, name, description):
+    def __init__(self, name, description, next_node=None, prev_node=None):
         self.id = None
         self.name = name
         self.description = description
+        
         # Create a next_node instance variable that will have the value of the next_node parameter
+        self.next_node = next_node
+        
         # Create a prev_node instance variable that will have the value of the prev_node parameter
+        self.prev_node = prev_node
 
     @property
     def name_getter(self):
@@ -67,6 +71,7 @@ class Room:
         self.id = CURSOR.lastrowid
 
         # Append to the DoublyLinkedList containing the Room instances
+        Room.doubly_linked_list.append(self)
 
     @classmethod
     def create(cls, name, description):
@@ -89,4 +94,10 @@ class Room:
         rows = CURSOR.execute(sql).fetchall()
 
         # Update the doubly_linked_list class variable that contains the DoublyLinkedList used to store the data for the rooms to contain the data for the rows obtained from the rooms table.
+        cls.doubly_linked_list = DoublyLinkedList()
+
+        for row in rows:
+            room = cls.instance_from_db(row)
+            cls.doubly_linked_list.append(room)
+
         return cls.doubly_linked_list

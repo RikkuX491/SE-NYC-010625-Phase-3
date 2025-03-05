@@ -1,9 +1,12 @@
 # The head node is going to be the very first node in our doubly linked list, and will point to the next node once we start adding more elements.
 # The tail node is going to be the very last node in our doubly linked list, and will point to the previous node once we start adding more elements.
 class DoublyLinkedList:
-    def __init__(self, head=None, tail=None):
-        self.head = head
-        self.tail = tail
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+        # Optional
+        self.length = 0
     
     def append(self, node):
         # Add element to the beginning of the doubly linked list if the doubly linked list is empty. Both head and tail should be the same since there is only 1 node in the doubly linked list in this case.
@@ -19,8 +22,15 @@ class DoublyLinkedList:
             # We also need to make sure to keep track of the new tail.
             self.tail = node
 
+        # Optional
+        self.length += 1
+
     def delete_tail(self):
-        if self.head == self.tail:
+        # There is nothing to delete if the linked list is empty.
+        if self.head == None:
+            return
+
+        elif self.head == self.tail:
             self.head = None
             self.tail = None
 
@@ -31,6 +41,8 @@ class DoublyLinkedList:
             # update the tail and next_node pointers
             prev.next_node = None
             self.tail = prev
+
+        self.length -= 1
 
 # Doubly linked lists have pointers to the next node as well as the previous node.
 class Node:

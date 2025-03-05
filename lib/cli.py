@@ -2,8 +2,8 @@
 
 from helpers import (
     exit_program,
-    option_1_function,
-    option_2_function
+    traverse_through_pages,
+    traverse_through_rooms
 )
 
 
@@ -14,9 +14,9 @@ def main():
         if choice == "0":
             exit_program()
         elif choice == "1":
-            option_1_function()
+            traverse_through_pages()
         elif choice == "2":
-            option_2_function()
+            traverse_through_rooms()
         else:
             print("Invalid choice! Please try again!")
 
@@ -24,8 +24,8 @@ def main():
 def menu():
     print("Please select an option:")
     print("0. Exit the program")
-    print("1. Option 1")
-    print("2. Option 2")
+    print("1. Interact with Page data")
+    print("2. Interact with Room data")
 
 if __name__ == "__main__":
     main()

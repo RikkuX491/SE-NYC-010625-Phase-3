@@ -6,10 +6,12 @@ class Page:
     singly_linked_list = SinglyLinkedList()
 
     # Add a next_node parameter to the __init__() method that has a default value of None
-    def __init__(self, text):
+    def __init__(self, text, next_node=None):
         self.id = None
         self.text = text
+        
         # Create a next_node instance variable that will have the value of the next_node parameter
+        self.next_node = next_node
 
     @property
     def text_getter(self):
@@ -53,6 +55,7 @@ class Page:
         self.id = CURSOR.lastrowid
 
         # Append to the SinglyLinkedList containing the Page instances
+        Page.singly_linked_list.append(self)
 
     @classmethod
     def create(cls, text):
@@ -75,4 +78,10 @@ class Page:
         rows = CURSOR.execute(sql).fetchall()
 
         # Update the singly_linked_list class variable that contains the SinglyLinkedList used to store the data for the pages to contain the data for the rows obtained from the pages table.
+        cls.singly_linked_list = SinglyLinkedList()
+        
+        for row in rows:
+            page = cls.instance_from_db(row)
+            cls.singly_linked_list.append(page)
+
         return cls.singly_linked_list
