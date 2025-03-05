@@ -16,4 +16,4 @@
 |6 | SQL Fundamentals & Table Relations          |[06_starter](https://github.com/RikkuX491/SE-NYC-010625-Phase-3/tree/06_starter)|[06_example_code](https://github.com/RikkuX491/SE-NYC-010625-Phase-3/tree/06_example_code)|[06_solution](https://github.com/RikkuX491/SE-NYC-010625-Phase-3/tree/06_solution)|
 |7 | Object-Relational Mapping                   |[07_starter](https://github.com/RikkuX491/SE-NYC-010625-Phase-3/tree/07_starter)|[07_example_code](https://github.com/RikkuX491/SE-NYC-010625-Phase-3/tree/07_example_code)|[07_solution](https://github.com/RikkuX491/SE-NYC-010625-Phase-3/tree/07_solution)|
 |8 | Python CLI                                  |[08_starter](https://github.com/RikkuX491/SE-NYC-010625-Phase-3/tree/08_starter)|[08_example_code](https://github.com/RikkuX491/SE-NYC-010625-Phase-3/tree/08_example_code)|N/A|
-|9 | Data Structures and Algorithms              ||||
+|9 | Data Structures and Algorithms              |[09_starter](https://github.com/RikkuX491/SE-NYC-010625-Phase-3/tree/09_starter)|||
