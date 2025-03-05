@@ -1,5 +1,5 @@
 from models.__init__ import CONN, CURSOR
-from data_structure_examples.singly_linked_list import SinglyLinkedList, Node
+from data_structure_examples.singly_linked_list import SinglyLinkedList
 
 class Page:
 
@@ -7,6 +7,7 @@ class Page:
 
     # Add a next_node parameter to the __init__() method that has a default value of None
     def __init__(self, text):
+        self.id = None
         self.text = text
         # Create a next_node instance variable that will have the value of the next_node parameter
 

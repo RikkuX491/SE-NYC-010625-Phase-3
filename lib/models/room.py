@@ -1,5 +1,5 @@
 from models.__init__ import CONN, CURSOR
-from data_structure_examples.doubly_linked_list import DoublyLinkedList, Node
+from data_structure_examples.doubly_linked_list import DoublyLinkedList
 
 class Room:
 
@@ -7,6 +7,7 @@ class Room:
 
     # Add next_node and prev_node parameters to the __init__() method that both have a default value of None
     def __init__(self, name, description):
+        self.id = None
         self.name = name
         self.description = description
         # Create a next_node instance variable that will have the value of the next_node parameter
