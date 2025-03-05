@@ -24,4 +24,4 @@ In today's lecture, we will discuss about Data Structures and Algorithms in Pyth
 
 4. Run `python lib/debug.py` to execute the code in the `debug.py` file which will allow us to enter an `ipdb.set_trace()` session.
 
-4. Run `python lib/cli.py` to execute the code in our `cli.py` file.
+5. Run `python lib/cli.py` to execute the code in our `cli.py` file.
